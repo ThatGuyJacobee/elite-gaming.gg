@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import "../styles/global.css";
+import eliteLogo from "../assets/elite-logo.png";
 
 interface Props {
     title: string;
@@ -24,7 +26,13 @@ const year = new Date().getFullYear();
     <body class="min-h-screen bg-brand-bg-dark text-brand-bg-light antialiased">
         <div class="mx-auto flex min-h-screen w-full max-w-4xl flex-col px-6 py-16 sm:px-8">
             <header class="space-y-5 text-center">
-                <p class="text-2xl font-bold uppercase tracking-[0.3em] text-brand-primary">Elite Gaming</p>
+                <Image
+                    src={eliteLogo}
+                    alt="Elite Group Logo"
+                    class="mx-auto h-32 w-auto sm:h-36"
+                    loading="eager"
+                    format="webp"
+                />
                 <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
                 {
                     description ? (
