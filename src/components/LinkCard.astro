@@ -6,24 +6,36 @@ interface Props {
     title: string;
     description: string;
     icon: string;
+    featured?: boolean;
 }
 
-const { href, title, description, icon } = Astro.props;
+const { href, title, description, icon, featured = false } = Astro.props;
+const cardClass = featured ? "px-6 py-5 sm:py-6" : "px-5 py-4";
+const iconBoxClass = featured ? "size-14" : "size-12";
+const iconClass = featured ? "size-7" : "size-6";
+const titleClass = featured ? "text-xl" : "text-lg";
 ---
 
 <a
     href={href}
     target="_blank"
-    class="group flex items-center gap-4 rounded-2xl border border-brand-bg-light/15 bg-brand-bg-light/5 px-5 py-4 transition hover:border-brand-primary hover:bg-brand-bg-light/10"
+    rel="noopener noreferrer"
+    class:list={[
+        "group flex items-center gap-4 rounded-2xl border border-brand-bg-light/15 bg-brand-bg-light/5 text-left transition hover:border-brand-primary hover:bg-brand-bg-light/10",
+        cardClass,
+    ]}
 >
     <span
-        class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand-secondary/15 text-brand-secondary transition group-hover:bg-brand-primary/15 group-hover:text-brand-primary"
+        class:list={[
+            "flex shrink-0 items-center justify-center rounded-xl bg-brand-secondary/15 text-brand-secondary transition group-hover:bg-brand-primary/15 group-hover:text-brand-primary",
+            iconBoxClass,
+        ]}
     >
-        <Icon name={icon} class="size-6" aria-hidden="true" />
+        <Icon name={icon} class={iconClass} aria-hidden="true" />
     </span>
 
-    <span class="min-w-0 text-left">
-        <span class="block text-lg font-semibold">{title}</span>
+    <span class="min-w-0">
+        <span class:list={["block font-semibold", titleClass]}>{title}</span>
         <span class="mt-1 block text-sm text-brand-bg-light/70">{description}</span>
     </span>
 </a>

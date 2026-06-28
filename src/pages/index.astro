@@ -1,42 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import LinkCard from "../components/LinkCard.astro";
+import LinkSection from "../components/LinkSection.astro";
+import { featuredLinks, projectLinks, utilityLinks } from "../data/links";
 ---
 
 <Layout
     title="Elite Group x Elite Gaming"
     description="We are a community with a focus on gaming, project development and much more, featuring Elite Gaming FiveM, Elite Bot and Elite Music Discord bots! 🔥 🎮"
 >
-    <div class="grid gap-4 sm:grid-cols-2">
-        <LinkCard
-            href="https://discord.elite-gaming.gg"
-            icon="simple-icons:discord"
-            title="Discord Server"
-            description="Join our community and stay updated with the latest news, projects and more!"
-        />
-        <LinkCard
-            href="https://fivem.elite-gaming.gg"
-            icon="simple-icons:fivem"
-            title="Elite Gaming FiveM"
-            description="Experience full law enforcement gameplay with NPCs & live with other players."
-        />
-        <LinkCard
-            href="https://status.elite-gaming.gg"
-            icon="simple-icons:uptimekuma"
-            title="Infrastructure Status"
-            description="Check the live status of our infrastructure and projects right here."
-        />
-        <LinkCard
-            href="https://elite-bot.com"
-            icon="mdi:robot"
-            title="Elite Bot"
-            description="Elite Bot is a highly customisable and feature-packed Multipurpose Verfied Discord Bot! 👋"
-        />
-        <LinkCard
-            href="https://github.com/ThatGuyJacobee/Elite-Music"
-            icon="mdi:music-note"
-            title="Elite Music Discord Bot"
-            description="An open-source & feature-packed bot, complete with Plex & Subsonic API support, Docker images, localisation and much more! 🚀💪"
-        />
+    <div class="space-y-12">
+        <LinkSection title="Featured" description="Join the community today and jump into our fun FiveM experience.">
+            {featuredLinks.map((link) => <LinkCard featured {...link} />)}
+        </LinkSection>
+
+        <LinkSection title="Our Projects" description="Check out some of our dope projects that we work on.">
+            {projectLinks.map((link) => <LinkCard {...link} />)}
+        </LinkSection>
+
+        <LinkSection title="Utility" description="Check out some of the extras below." columns={1}>
+            {utilityLinks.map((link) => <LinkCard {...link} />)}
+        </LinkSection>
     </div>
 </Layout>
