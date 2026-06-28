@@ -1,17 +1,42 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import LinkCard from "../components/LinkCard.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+    title="Gaming & Developer Community"
+    description="We are a small community with a focus on gaming, project development and much more, featuring Elite Gaming FiveM, Elite Bot and Elite Music Discord bots! 🔥 🎮"
+>
+    <div class="grid gap-4 sm:grid-cols-2">
+        <LinkCard
+            href="https://discord.elite-gaming.gg"
+            icon="simple-icons:discord"
+            title="Discord Server"
+            description="Join our community and stay updated with the latest news, projects and more!"
+        />
+        <LinkCard
+            href="https://fivem.elite-gaming.gg"
+            icon="simple-icons:fivem"
+            title="Elite Gaming FiveM"
+            description="Experience full law enforcement gameplay with NPCs & live with other players."
+        />
+        <LinkCard
+            href="https://status.elite-gaming.gg"
+            icon="simple-icons:uptimekuma"
+            title="Infrastructure Status"
+            description="Check the live status of our infrastructure and projects right here."
+        />
+        <LinkCard
+            href="https://github.com/ThatGuyJacobee/Elite-Music"
+            icon="mdi:robot"
+            title="Elite Bot"
+            description="Elite Bot is a highly customisable and feature-packed Multipurpose Verfied Discord Bot! 👋"
+        />
+        <LinkCard
+            href="https://github.com/ThatGuyJacobee/Elite-Music"
+            icon="mdi:music-note"
+            title="Elite Music Discord Bot"
+            description="An open-source & feature-packed bot, complete with Plex & Subsonic API support, Docker images, localisation and much more! 🚀💪"
+        />
+    </div>
+</Layout>

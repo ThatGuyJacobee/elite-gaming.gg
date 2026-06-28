@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    href: string;
+    title: string;
+    description: string;
+    icon: string;
+}
+
+const { href, title, description, icon } = Astro.props;
+---
+
+<a
+    href={href}
+    target="_blank"
+    class="group flex items-center gap-4 rounded-2xl border border-brand-bg-light/15 bg-brand-bg-light/5 px-5 py-4 transition hover:border-brand-primary hover:bg-brand-bg-light/10"
+>
+    <span
+        class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand-secondary/15 text-brand-secondary transition group-hover:bg-brand-primary/15 group-hover:text-brand-primary"
+    >
+        <Icon name={icon} class="size-6" aria-hidden="true" />
+    </span>
+
+    <span class="min-w-0 text-left">
+        <span class="block text-lg font-semibold">{title}</span>
+        <span class="mt-1 block text-sm text-brand-bg-light/70">{description}</span>
+    </span>
+</a>
