@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --max-w-1/2: 50%;
     --max-w-1/3: 33.333333%;

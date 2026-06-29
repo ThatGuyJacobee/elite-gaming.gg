@@ -21,7 +21,7 @@ const titleClass = featured ? "text-xl" : "text-lg";
     target="_blank"
     rel="noopener noreferrer"
     class:list={[
-        "group flex items-center gap-4 rounded-2xl border border-brand-bg-light/15 bg-brand-bg-light/5 text-left transition hover:border-brand-primary hover:bg-brand-bg-light/10",
+        "group flex items-center gap-4 rounded-2xl border border-zinc-200 bg-white/80 text-left transition hover:border-brand-primary hover:bg-white dark:border-zinc-800 dark:bg-white/5 dark:hover:bg-white/10",
         cardClass,
     ]}
 >
@@ -36,6 +36,6 @@ const titleClass = featured ? "text-xl" : "text-lg";
 
     <span class="min-w-0">
         <span class:list={["block font-semibold", titleClass]}>{title}</span>
-        <span class="mt-1 block text-sm text-brand-bg-light/70">{description}</span>
+        <span class="mt-1 block text-sm text-zinc-600 dark:text-zinc-300">{description}</span>
     </span>
 </a>
