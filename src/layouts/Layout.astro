@@ -17,11 +17,15 @@ const year = new Date().getFullYear();
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta name="theme-color" content="#fafafa" />
         <script is:inline>
             (() => {
                 const storageKey = "theme-preference";
                 const validPreferences = new Set(["system", "light", "dark"]);
                 const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+                const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+                // Mirrors --color-brand-page and --color-brand-dark-bg so browser chrome matches the page.
+                const themeColors = { light: "#fafafa", dark: "#101010" };
 
                 const getStoredPreference = () => {
                     try {
@@ -47,6 +51,7 @@ const year = new Date().getFullYear();
                     root.dataset.themePreference = preference;
                     root.classList.toggle("dark", resolvedTheme === "dark");
                     root.style.colorScheme = resolvedTheme;
+                    themeColorMeta?.setAttribute("content", themeColors[resolvedTheme]);
 
                     if (persist) {
                         try {
