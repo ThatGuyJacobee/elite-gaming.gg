@@ -11,10 +11,15 @@
 
     --color-brand-primary: #be292f;
     --color-brand-secondary: #737ada;
-    --color-brand-bg-light: #d8d4d8;
-    --color-brand-bg-dark: #101010;
-    --color-brand-success: #228b22;
-    --color-brand-fail: #be292f;
+    --color-brand-page: #fafafa;
+    --color-brand-ink: #18181b;
+    --color-brand-muted: #52525b;
+    --color-brand-subtle: #71717a;
+    --color-brand-border: #e4e4e7;
+    --color-brand-surface: #ffffffcc;
+    --color-brand-surface-hover: #ffffff;
+    --color-brand-dark-bg: #101010;
+    --color-brand-dark-fg: #d8d4d8;
 }
 
 body {

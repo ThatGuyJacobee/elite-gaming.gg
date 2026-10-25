@@ -89,7 +89,7 @@ const year = new Date().getFullYear();
         {description ? <meta name="description" content={description} /> : null}
     </head>
     <body
-        class="min-h-screen bg-zinc-50 text-zinc-900 antialiased transition-colors dark:bg-brand-bg-dark dark:text-zinc-100"
+        class="min-h-screen bg-brand-page text-brand-ink antialiased transition-colors dark:bg-brand-dark-bg dark:text-brand-dark-fg"
     >
         <div class="mx-auto flex min-h-screen w-full max-w-4xl flex-col px-6 py-16 sm:px-8">
             <header class="space-y-5 text-center">
@@ -103,7 +103,7 @@ const year = new Date().getFullYear();
                 <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
                 {
                     description ? (
-                        <p class="mx-auto max-w-2xl text-sm text-zinc-600 sm:text-base dark:text-zinc-300">
+                        <p class="mx-auto max-w-2xl text-sm text-brand-muted sm:text-base dark:text-brand-dark-fg/70">
                             {description}
                         </p>
                     ) : null
@@ -118,7 +118,7 @@ const year = new Date().getFullYear();
             </main>
 
             <footer
-                class="mt-16 border-t border-zinc-200 pt-8 text-center text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400"
+                class="mt-16 border-t border-brand-border pt-8 text-center text-sm text-brand-subtle dark:border-brand-dark-fg/15 dark:text-brand-dark-fg/50"
             >
                 <p>&copy; Elite Group {year}. All rights reserved.</p>
             </footer>
